@@ -49,7 +49,7 @@ $main_news = $rs1->fetch();
         <?= $main_news["announce"] ?>
     </samp>
 </section>
-<h1>Новости</h1>
+<h1 class="main__title">Новости</h1>
 <section class="main__section--news">
     <?php
     while ($row = $rs->fetch()) {
@@ -69,13 +69,40 @@ $main_news = $rs1->fetch();
         <?php
     }
     ?>
-    <section>
+</section>
+<section class="main__section--page">
+
+
+    <?php
+    $i = $_GET['page'] ?? 1;
+    $p = $_GET['page'] ?? 1;
+    if ($i != 1) {
+        ?>
+        <a class="main__a--page--moving" href="index.php?page=<?= $i - 1 ?>">←</a>
         <?php
-        for ($i = 1; $i <= $pages; $i++) {
-            ?>
-            <a href="index.php?page=<?= $i ?>"><?= $i ?></a>
-            <?php
+    }
+    $j = 0;
+    while ($j < 3 && $i <= $pages) {
+        $class = '';
+        if ($i == $p) {
+            $class = "main__a--page-active main__a--page";
+        } else {
+            $class = "main__a--page";
         }
         ?>
-    </section>
+
+        <a class="<?= $class ?>" href="index.php?page=<?= $i ?>"><?= $i ?></a>
+        <?php
+        $j++;
+        $i++;
+
+    }
+
+    if ($i - $j < $pages) {
+        ?>
+        <a class="main__a--page--moving" href="index.php?page=<?= $i - $j + 1 ?>">→</a>
+        <?php
+    }
+    ?>
+
 </section>

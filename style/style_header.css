@@ -1,21 +1,31 @@
-:root{
-    --color-title: #2C145E;
-    --padding: 16px 8px 16px 8px;
+:root {
+  --color-title: #2c145e;
+  --padding: 8px 16px 8px 16px;
 }
-
-.header__section{
-    display: flex;
-    flex-direction: row;
-}
-
-
-.header__logo{
-      padding: var(--padding);
-      object-fit: contain;
-}
-.header__title{
+a, samp{
     padding: var(--padding);
-    color: var(--color-title);
-    text-transform: uppercase;
-    white-space: pre-line;
+}
+body {
+  overflow-x: hidden;  
+  max-width: 100%;    
+}
+a{
+    text-decoration: none;
+}
+.header__section {
+  padding-left: 10%;
+  padding-right: 10%;
+  display: flex;
+  flex-direction: row;
+}
+
+.header__logo {
+  padding: var(--padding);
+  object-fit: contain;
+}
+.header__title {
+  padding: var(--padding);
+  color: var(--color-title);
+  text-transform: uppercase;
+  white-space: pre-line;
 }
