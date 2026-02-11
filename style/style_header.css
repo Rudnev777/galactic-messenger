@@ -1,0 +1,21 @@
+:root{
+    --color-title: #2C145E;
+    --padding: 16px 8px 16px 8px;
+}
+
+.header__section{
+    display: flex;
+    flex-direction: row;
+}
+
+
+.header__logo{
+      padding: var(--padding);
+      object-fit: contain;
+}
+.header__title{
+    padding: var(--padding);
+    color: var(--color-title);
+    text-transform: uppercase;
+    white-space: pre-line;
+}
